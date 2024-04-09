@@ -131,7 +131,7 @@ QualitySettings:
     vSyncCount: 1
     realtimeGICPUUsage: 25
     lodBias: 2
-    maximumLODLevel: 0
+    maximumLODLevel: 5
     enableLODCrossFade: 1
     streamingMipmapsActive: 0
     streamingMipmapsAddAllCameras: 1
@@ -146,7 +146,7 @@ QualitySettings:
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 11400000, guid: 7b7fd9122c28c4d15b667c7040e3b3fd,
       type: 2}
-    terrainQualityOverrides: 8
+    terrainQualityOverrides: 152
     terrainPixelError: 1
     terrainDetailDensityScale: 1
     terrainBasemapDistance: 1000
@@ -154,7 +154,7 @@ QualitySettings:
     terrainTreeDistance: 5000
     terrainBillboardStart: 50
     terrainFadeLength: 5
-    terrainMaxTrees: 50
+    terrainMaxTrees: 2814
     excludedTargetPlatforms: []
   m_TextureMipmapLimitGroupNames: []
   m_PerPlatformDefaultQuality:
