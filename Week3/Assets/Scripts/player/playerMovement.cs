@@ -14,6 +14,7 @@ public class playerMovement : MonoBehaviour
     public float moveSpeed = 10f;
     public float xRange;
     public float zRange;
+    public Vector3 offset;
 
     public GameObject ProjectilePrefab;
 
@@ -55,7 +56,8 @@ public class playerMovement : MonoBehaviour
         //Launch Projectile
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(ProjectilePrefab, transform.position, ProjectilePrefab.transform.rotation);
+            GameObject steak = Instantiate(ProjectilePrefab, transform.position + offset, ProjectilePrefab.transform.rotation);
+            Destroy(steak, 3);
         }
     }
 

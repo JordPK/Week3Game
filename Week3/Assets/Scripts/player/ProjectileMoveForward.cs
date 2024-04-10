@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ProjectileMoveForward : MonoBehaviour
 {
+    GameManager gameManager;
     public float speed = 40f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -17,4 +18,5 @@ public class ProjectileMoveForward : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
     }
-}
+ }
+
