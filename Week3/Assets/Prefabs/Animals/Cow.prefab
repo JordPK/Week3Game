@@ -1073,8 +1073,8 @@ GameObject:
   - component: {fileID: 4874184230648573693}
   - component: {fileID: 1107967561665673967}
   - component: {fileID: 6979075220295767183}
-  - component: {fileID: 3120360861408314287}
   - component: {fileID: 9121584713391079942}
+  - component: {fileID: 3777419794972856281}
   m_Layer: 0
   m_Name: Cow
   m_TagString: Animal
@@ -1131,8 +1131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33524abbd8a77ec429573544a413ebda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
   followDistance: 40
+  minFollowDistance: 5
 --- !u!54 &6979075220295767183
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1160,8 +1160,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!64 &3120360861408314287
-MeshCollider:
+--- !u!195 &9121584713391079942
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5111428394486881804}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 3.36
+  m_Speed: 10
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 24.68
+  m_BaseOffset: -3.2
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!65 &3777419794972856281
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1178,32 +1200,9 @@ MeshCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: f18cd949d6d73cb459e428cd63e6ac27, type: 3}
---- !u!195 &9121584713391079942
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5111428394486881804}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 16.34
-  m_Speed: 10
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 24.68
-  m_BaseOffset: -3.2
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  serializedVersion: 3
+  m_Size: {x: -34.45, y: 68.7, z: 46.91}
+  m_Center: {x: 0, y: 13.23, z: 0}
 --- !u!1 &5219218852838170943
 GameObject:
   m_ObjectHideFlags: 0

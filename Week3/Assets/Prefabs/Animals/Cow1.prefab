@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4457361248418425377}
   - component: {fileID: 403946730830299857}
   - component: {fileID: 3979557481282903509}
-  - component: {fileID: 1044998445938727687}
   - component: {fileID: 3390113086827453157}
   - component: {fileID: 1940497860154274748}
+  - component: {fileID: 7025290918118832506}
   m_Layer: 0
   m_Name: Cow1
   m_TagString: Animal
@@ -72,28 +72,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
   followDistance: 40
---- !u!64 &1044998445938727687
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 423044512652184201}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: f18cd949d6d73cb459e428cd63e6ac27, type: 3}
 --- !u!54 &3390113086827453157
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,6 +121,27 @@ NavMeshAgent:
   m_BaseOffset: -0.56
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &7025290918118832506
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423044512652184201}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &462270274544051591
 GameObject:
   m_ObjectHideFlags: 0

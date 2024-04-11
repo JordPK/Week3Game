@@ -301,8 +301,8 @@ GameObject:
   - component: {fileID: 6382117368729090555}
   - component: {fileID: 6140433402239638987}
   - component: {fileID: 938804728932470999}
-  - component: {fileID: 2431003467298941119}
   - component: {fileID: 3695174858337335267}
+  - component: {fileID: -592746759923608930}
   m_Layer: 0
   m_Name: Animal_Horse_Black
   m_TagString: Animal
@@ -361,7 +361,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1286211546416343326}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 8.03
+  m_Radius: 2.69
   m_Speed: 10
   m_Acceleration: 14.64
   avoidancePriority: 50
@@ -386,30 +386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33524abbd8a77ec429573544a413ebda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 6140433402239638987}
   followDistance: 40
---- !u!64 &2431003467298941119
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286211546416343326}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300006, guid: c4324fcdc6ce67d4e97e3c807c446974, type: 3}
+  minFollowDistance: 5
 --- !u!54 &3695174858337335267
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -437,6 +415,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!65 &-592746759923608930
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286211546416343326}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 35.3, y: 53.79, z: 67.8}
+  m_Center: {x: 0, y: 9.61, z: 0}
 --- !u!1 &1383219667753264402
 GameObject:
   m_ObjectHideFlags: 0

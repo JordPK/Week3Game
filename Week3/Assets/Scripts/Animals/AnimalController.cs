@@ -6,8 +6,9 @@ using UnityEngine.AI;
 
 public class AnimalController : MonoBehaviour
 {
-    public NavMeshAgent agent;
+    NavMeshAgent agent;
     public float followDistance;
+    public float minFollowDistance;
 
     GameManager gameManager;
     private bool isFed = false;
@@ -22,10 +23,14 @@ public class AnimalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (isFed && Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, transform.position) <= followDistance) 
+        float distanceToPlayer = Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, transform.position);
+        if (isFed && distanceToPlayer <= followDistance && distanceToPlayer >= minFollowDistance) 
         {
-            agent.destination = GameObject.FindGameObjectWithTag("Player").transform.position;
+            agent.destination = GameObject.FindGameObjectWithTag("Player").transform.position;  
+        }
+        else
+        {
+            agent.destination = transform.position;
         }
     }
     private void OnTriggerEnter(Collider other)
