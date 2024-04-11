@@ -11,18 +11,20 @@ public class animalSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        InvokeRepeating("SpawnRandomAnimal", 5, 10);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) 
-        {
-            Vector3 spawnPosition = new Vector3(30, 2, 114);
-            int animalIndex = Random.Range(0, animals.Length);
-            //Spawns animals based on Index
-            Instantiate(animals[animalIndex], spawnPosition, animals[animalIndex].transform.rotation);
-        }
+       
+    }
+
+    void SpawnRandomAnimal()
+    {
+        Vector3 spawnPosition = new Vector3(Random.Range(-xRange, xRange), 0 , zRange);
+        int animalIndex = Random.Range(0, animals.Length);
+        //Spawns animals based on Index
+        Instantiate(animals[animalIndex], spawnPosition, animals[animalIndex].transform.rotation);
     }
 }
