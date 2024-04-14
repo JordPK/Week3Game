@@ -5,13 +5,11 @@ using UnityEngine;
 public class animalSpawner : MonoBehaviour
 {
     public GameObject[] animals;
-    
-
     public float xRange, zRange;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnRandomAnimal", 5, 10);
+        InvokeRepeating("SpawnRandomAnimal", 2, 7);
     }
 
     // Update is called once per frame
@@ -22,7 +20,7 @@ public class animalSpawner : MonoBehaviour
 
     void SpawnRandomAnimal()
     {
-        Vector3 spawnPosition = new Vector3(Random.Range(-xRange, xRange), 0 ,(Random.Range(-zRange, zRange)));
+        Vector3 spawnPosition = new Vector3(Random.Range(-xRange, xRange), 1 ,(Random.Range(-zRange, zRange)));
         int animalIndex = Random.Range(0, animals.Length);
         //Spawns animals based on Index
         Instantiate(animals[animalIndex], spawnPosition, animals[animalIndex].transform.rotation);

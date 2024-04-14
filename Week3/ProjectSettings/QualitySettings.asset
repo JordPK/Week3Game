@@ -122,7 +122,7 @@ QualitySettings:
     globalTextureMipmapLimit: 0
     textureMipmapLimitSettings: []
     anisotropicTextures: 2
-    antiAliasing: 4
+    antiAliasing: 8
     softParticles: 0
     softVegetation: 1
     realtimeReflectionProbes: 1
@@ -152,7 +152,7 @@ QualitySettings:
     terrainBasemapDistance: 1000
     terrainDetailDistance: 210
     terrainTreeDistance: 5000
-    terrainBillboardStart: 129
+    terrainBillboardStart: 141
     terrainFadeLength: 5
     terrainMaxTrees: 2814
     excludedTargetPlatforms: []

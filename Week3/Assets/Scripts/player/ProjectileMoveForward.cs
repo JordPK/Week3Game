@@ -6,6 +6,7 @@ public class ProjectileMoveForward : MonoBehaviour
 {
     GameManager gameManager;
     public float speed = 40f;
+    public float gravity = .1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class ProjectileMoveForward : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.down * gravity * Time.deltaTime);
 
     }
  }

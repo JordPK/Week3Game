@@ -11,25 +11,29 @@ public class GameManager : MonoBehaviour
     public float timeLeft;
     public TextMeshProUGUI timeText;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highScoreText;
 
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0f;
+        highScoreText.text = "High Score : " + PlayerPrefs.GetInt("HighScore").ToString();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Time.timeScale = 1f;
-        }
+  
         timeLeft -= Time.deltaTime;
 
         if (timeLeft < 0f)
         {
             Time.timeScale = 0f;
+
+            if (score > PlayerPrefs.GetInt("HighScore")) 
+            {
+                PlayerPrefs.SetInt("HighScore", score);
+            }
             RestartScene();
         }
 
@@ -38,10 +42,11 @@ public class GameManager : MonoBehaviour
         
         void RestartScene()
         {
-            if (Input.GetKeyDown (KeyCode.Space))
-            {
-                SceneManager.LoadScene(0);
-            }
+            Time.timeScale = 1f;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene(0);
         }
+            
     }
 }

@@ -5,12 +5,20 @@ using UnityEngine;
 public class TPSController : MonoBehaviour
 {
     // Start is called before the first frame update
+    
+    [Header("Transforms")]
     public CharacterController controller;
     public Transform cam;
-    Animator anim;
+    public Transform hand;
     public GameObject ProjectilePrefab;
+    Animator anim;
     public Vector3 offset;
+    
+    [Header("Speeds")]
     public float speed = 6f;
+
+    Vector3 velocity;
+    public float gravity = -9.81f;
 
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
@@ -29,6 +37,9 @@ public class TPSController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        //set gravity
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
 
         if (direction.magnitude >= 0.1f)
         {
@@ -47,8 +58,14 @@ public class TPSController : MonoBehaviour
         //Launch Projectile
         if (Input.GetKeyDown(KeyCode.F))
         {
-            GameObject steak = Instantiate(ProjectilePrefab, transform.position + offset, transform.rotation);
-            Destroy(steak, 3);
+            anim.SetTrigger("Throw");
         }
+
+    
+    }
+    void DelayedProjectile()
+    {
+        GameObject steak = Instantiate(ProjectilePrefab, hand.position, transform.rotation);
+        Destroy(steak, 3);
     }
 }
